@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+ //   return view('welcome');
+//});
+
+Route::get('permiso/{nombre?}', function($nombre= 'eduard' ){
+    return $nombre;
+});//->where('nombre', '[0-9]+')->name('permiso');
