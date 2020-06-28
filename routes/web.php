@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
  //   return view('welcome');
 //});
 
-Route::get('permiso/{nombre?}', function($nombre= 'eduard' ){
-    return $nombre;
-});//->where('nombre', '[0-9]+')->name('permiso');
+Route::get('/','InicioController@index');
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::get('permiso','PermisoController@index')->name('permiso');
+    Route::get('permiso/crear','PermisoController@crear')->name('crear_permiso');
+});
