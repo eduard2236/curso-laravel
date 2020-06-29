@@ -24,6 +24,8 @@ class CreateLibroPrestamoTable extends Migration
             $table->timestamps();
             $table->foreign('usuario_id', 'fk_libroprestamo_usuario')->references('id')->on('usuario')->onDelete('restrict')->onUpdate('restrict');
             $table->foreign('libro_id', 'fk_libroprestamo_libro')->references('id')->on('libro')->onDelete('restrict')->onUpdate('restrict');
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 
