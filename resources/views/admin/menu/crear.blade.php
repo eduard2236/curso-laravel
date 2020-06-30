@@ -2,7 +2,12 @@
 @section('titulo')
   Sistema Menus
 @endsection
-@section('contenido')
+
+@section("scripts")
+<script src="{{asset("Assets/pages/scripts/admin/menu/crear.js")}}" type="text/javascript"></script>
+@endsection
+
+    @section('contenido')
     <div class="row">
         <div class="col-lg-12">
             @include('includes.form-error')
@@ -11,7 +16,7 @@
                 <div class="box-header with-border">
                   <h3 class="box-title">Crear-Menus</h3>
                 </div>
-            <form action="{{route('guardar_menu')}}" method="POST" id="form-general"s class="form-horizontal">
+            <form action="{{route('guardar_menu')}}" method="POST" id="form-general" class="form-horizontal">
                     @csrf
                     <div class="box-body">
                         @include('admin.menu.form')
@@ -26,4 +31,4 @@
             </div>
         </div>
     </div>        
-@endsection
+    @endsection

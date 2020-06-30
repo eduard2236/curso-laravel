@@ -52,16 +52,19 @@
             <!--fin  footer-->
         </div>
         <!-- jQuery 3 -->
-        <script src="{{asset("Assets/bower_components/jquery/dist/jquery.min.js")}}"></script>
+        <script src="{{asset("Assets/$theme/bower_components/jquery/dist/jquery.min.js")}}"></script>
         <!-- Bootstrap 3.3.7 -->
-        <script src="{{asset("Assets/bower_components/bootstrap/dist/js/bootstrap.min.js")}}"></script>
+        <script src="{{asset("Assets/$theme/bower_components/bootstrap/dist/js/bootstrap.min.js")}}"></script>
         <!-- SlimScroll -->
-        <script src="{{asset("Assets/bower_components/jquery-slimscroll/jquery.slimscroll.min.js")}}"></script>
+        <script src="{{asset("Assets/$theme/bower_components/jquery-slimscroll/jquery.slimscroll.min.js")}}"></script>
         <!-- FastClick -->
-        <script src="{{asset("Assets/bower_components/fastclick/lib/fastclick.js")}}"></script>
+        <script src="{{asset("Assets/$theme/bower_components/fastclick/lib/fastclick.js")}}"></script>
         <!-- AdminLTE App -->
-        <script src="{{asset("Assets/dist/js/adminlte.min.js")}}"></script>
+        <script src="{{asset("Assets/$theme/dist/js/adminlte.min.js")}}"></script>
         <!-- AdminLTE for demo purposes -->
-        @yield('script')
+        <script src="{{asset("Assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
+        <script src="{{asset("Assets/js/jquery-validation/localization/messages_es.min.js")}}"></script>
+        <script src="{{asset("Assets/js/funciones.js")}}"></script>
+        @yield("scripts")
     </body>
 </html>
