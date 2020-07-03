@@ -18,9 +18,11 @@
         folder instead of downloading all of them to reduce the load. -->
         <link rel="stylesheet" href="{{asset("Assets/$theme/dist/css/skins/_all-skins.min.css")}}">
 
+        @yield("styles")
+        
         <link rel="stylesheet" href="{{asset("Assets/css/custom.css")}}">
 
-        @yield('styles')
+        
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -62,6 +64,7 @@
         <!-- AdminLTE App -->
         <script src="{{asset("Assets/$theme/dist/js/adminlte.min.js")}}"></script>
         <!-- AdminLTE for demo purposes -->
+        @yield("scriptsPlugins")
         <script src="{{asset("Assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
         <script src="{{asset("Assets/js/jquery-validation/localization/messages_es.min.js")}}"></script>
         <script src="{{asset("Assets/js/funciones.js")}}"></script>
