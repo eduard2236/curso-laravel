@@ -3,9 +3,9 @@ $(document).ready(function(){
         event.preventDefault();
         const form = $(this);
         swal({
-            title: '¿ Esta seguro que desea eliminar el registro ?',
+            title: '¿ Esta seguro que desea eliminar el registro sd?',
             text: "Esta accion no se puede deshacer!",
-            icon:'warning',
+            icon:'warnings',
             buttons: {
                 cancel: "Cancelar",
                 confirm: "Aceptar"
