@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
  //   return view('welcome');
 //});
 
-Route::get('/','InicioController@index');
-
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+Route::get('/','InicioController@index')->name('inicio');
+Route::get('seguridad/login','Seguridad\LoginController@index')->name('login');
+Route::post('seguridad/login','Seguridad\LoginController@login')->name('login_post');
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware'=> 'auth'], function () {
+    Route::get('','AdminController@index');
     Route::get('permiso','PermisoController@index')->name('permiso');
     Route::get('permiso/crear','PermisoController@crear')->name('crear_permiso');
     //rutas del menu
@@ -38,3 +40,4 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::get('menu-rol','MenuRolController@index')->name('menu_rol');
     Route::post('menu-rol','MenuRolController@guardar')->name('guardar_menu_rol');
 });
+
