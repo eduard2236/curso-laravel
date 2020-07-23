@@ -25,3 +25,10 @@ label.requerido:after{
 .pl-40{
         padding-left:40px !important;
 }
+.auto-35{
+        background: url("../lte/dist/img/photo2.png");
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        }
