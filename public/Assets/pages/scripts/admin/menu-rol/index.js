@@ -18,7 +18,7 @@ function ajaxRequest(url,data){
         type: 'POST',
         data: data,
         success: function(respuesta){
-            Biblioteca.notificaciones('El rol se asigno correctamente' , 'Biblioteca', success);
+            Biblioteca.notificaciones('El rol se asigno correctamente' , 'Biblioteca', 'success');
         }
     });
 }

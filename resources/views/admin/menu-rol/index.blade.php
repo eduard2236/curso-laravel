@@ -37,7 +37,7 @@ Menu-Rol
                                         <td class="text-center">
                                             <input
                                             type="checkbox"
-                                            class="menu_rol"
+                                            class="menu_rol tooltipsC"
                                             name="menu_rol[]"
                                             data-menuid={{$menu["id"]}}
                                             value="{{$id}}" {{in_array($id, array_column($menusRols[$menu["id"]], "id"))? "checked" : ""}}>

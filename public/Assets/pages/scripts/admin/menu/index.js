@@ -12,7 +12,25 @@ $(document).ready(function(){
             success: function(respuesta){ 
             }
         });
-    
     });
+
+    $('.eliminar-menu').on('click' , function(event){
+        event.preventDefault();
+        const url = $(this).attr('href');
+        swal({
+            title: '¿ Esta seguro que desea eliminar el registro?',
+            text:"Esta accion no se puede deshacer! ",
+            icon: 'warning',
+            buttons:{
+                cancel:"Cancelar",
+                confirm: "Aceptar"
+            },
+        }).then((value)=>{
+            if (value){
+                window.location.href = url;
+            }
+        });
+    })
+
     $('#nestable').nestable('expandAll');     
-})
+});

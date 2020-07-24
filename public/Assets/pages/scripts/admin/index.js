@@ -5,7 +5,7 @@ $(document).ready(function(){
         swal({
             title: '¿ Esta seguro que desea eliminar el registro sd?',
             text: "Esta accion no se puede deshacer!",
-            icon:'warnings',
+            icon:'warning',
             buttons: {
                 cancel: "Cancelar",
                 confirm: "Aceptar"
