@@ -9,7 +9,6 @@
 
     @section('contenido')
     <div class="row">
-        <div class="col-lg-12">
             @include('includes.form-error')
             @include('includes.mensaje')
             <div class="box box-danger">
@@ -17,7 +16,7 @@
                   <h3 class="box-title">Crear-Menus</h3>
                   <a href="{{route('menu')}}" class=" btn btn-info btn-sm pull-right">Listado</a>
                 </div>
-            <form action="{{route('guardar_menu')}}" method="POST" id="form-general" class="form-horizontal" autocomplete="off">
+                <form action="{{route('guardar_menu')}}" method="POST" id="form-general" class="form-horizontal" autocomplete="off">
                     @csrf
                     <div class="box-body">
                         @include('admin.menu.form')
@@ -28,8 +27,8 @@
                             @include('includes.boton-form-crear')
                         </div>
                     </div>
-                </form>    
-            </div>
+                </form> 
+            </div>   
         </div>
     </div>        
     @endsection
