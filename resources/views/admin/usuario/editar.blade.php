@@ -4,7 +4,7 @@
 @endsection
 
 @section("scripts")
-<script src="{{asset("Assets/pages/scripts/admin/crear.js")}}" type="text/javascript"></script>
+<script src="{{asset("Assets/pages/scripts/admin/usuario/crear.js")}}" type="text/javascript"></script>
 @endsection
 
     @section('contenido')
