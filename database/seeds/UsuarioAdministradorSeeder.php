@@ -1,7 +1,8 @@
 <?php
 
+use App\Models\seguridad\Usuario;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioAdministradorSeeder extends Seeder
 {
@@ -12,15 +13,12 @@ class UsuarioAdministradorSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('usuario')->insert([
+        $usuario = Usuario::create([
             'usuarios' =>'eduard',
             'nombre' =>'Administrador',
-            'password' => bcrypt('pass123')
+            'email' =>'eduard_0412@hotmail.com',
+            'password' => '12345'
         ]);
-        DB::table('usuario_rol')->insert([
-            'rol_id' => 1,
-            'usuario_id' => 1,
-            'estado' => 1
-        ]);
+        $usuario->roles()->sync(1);
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
+use App\Models\Admin\Rol;
 use Illuminate\Database\Seeder;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
+
 
 class TablaRolSeeder extends Seeder
 {
@@ -19,9 +19,8 @@ class TablaRolSeeder extends Seeder
             'supervisor'
         ];
         foreach($rol as $key => $value){
-            DB::table('rol')-> insert([
+           Rol::create([
             'nombre' => $value,
-            'created_at'=>carbon::now()->format('y-m-d H:i:s')
             ]);
         }
     }
