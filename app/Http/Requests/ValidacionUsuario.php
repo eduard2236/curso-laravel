@@ -31,7 +31,7 @@ class ValidacionUsuario extends FormRequest
                 'email' => 'required|email|max:100|unique:usuario,email,' . $this->route('id'),
                 'password' => 'nullable|min:5',
                 're_password' => 'nullable|required_with:password|min:5|same:password',
-                'rol_id' => 'required|integer'
+                'rol_id' => 'required|array'
             ];
 
         }else{
@@ -41,7 +41,7 @@ class ValidacionUsuario extends FormRequest
                 'email' => 'required|email|max:100|unique:usuario,email,' . $this->route('id'),
                 'password' => 'required|min:5',
                 're_password' => 'required|min:5|same:password',
-                'rol_id' => 'required|integer'
+                'rol_id' => 'required|array'
             ];
 
         }

@@ -8,10 +8,14 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
         <link rel="stylesheet" href="{{asset("Assets/$theme/bower_components/bootstrap/dist/css/bootstrap.min.css")}}">
-        <!-- Font Awesome -->
+    <!-- Font Awesome -->
         <link rel="stylesheet" href="{{asset("Assets/$theme/bower_components/font-awesome/css/font-awesome.min.css")}}">
     <!-- Ionicons -->
         <link rel="stylesheet" href="{{asset("Assets/$theme/bower_components/Ionicons/css/ionicons.min.css")}}">
+    <!-- Theme style -->
+        <link rel="stylesheet" href="{{asset("Assets/$theme/dist/css/AdminLTE.min.css")}}">
+    <!-- Select2 -->
+        <link rel="stylesheet" href="{{asset("Assets/$theme/bower_components/select2/dist/css/select2.min.css")}}">
     <!-- Theme style -->
         <link rel="stylesheet" href="{{asset("Assets/$theme/dist/css/AdminLTE.min.css")}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -61,10 +65,13 @@
         <script src="{{asset("Assets/$theme/bower_components/bootstrap/dist/js/bootstrap.min.js")}}"></script>
         <!-- SlimScroll -->
         <script src="{{asset("Assets/$theme/bower_components/jquery-slimscroll/jquery.slimscroll.min.js")}}"></script>
+        <!-- Select2 -->
+        <script src="{{asset("Assets/$theme/bower_components/select2/dist/js/select2.full.min.js")}}"></script>
         <!-- FastClick -->
         <script src="{{asset("Assets/$theme/bower_components/fastclick/lib/fastclick.js")}}"></script>
         <!-- AdminLTE App -->
         <script src="{{asset("Assets/$theme/dist/js/adminlte.min.js")}}"></script>
+       
         <!-- AdminLTE for demo purposes -->
         @yield("scriptsPlugins")
         <script src="{{asset("Assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
@@ -73,6 +80,14 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script src="{{asset("Assets/js/scripts.js")}}"></script>
         <script src="{{asset("Assets/js/funciones.js")}}"></script>
+        <script>
+            $(function () {
+              //Initialize Select2 Elements
+              $('.select2').select2()
+            })
+          </script>
+        
+
         @yield("scripts")
     </body>
 </html>
