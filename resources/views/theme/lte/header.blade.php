@@ -116,15 +116,7 @@
               <!-- Menu Body -->
               <li class="user-body">
                 <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Followers</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Sales</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">Friends</a>
-                  </div>
+                 
                 </div>
               </li>
               <!-- Menu Footer-->
@@ -132,6 +124,11 @@
                 <div class="pull-left">
                 <a href="{{route('login')}}" class="btn btn-default btn-flat">Login</a>
                 </div>
+                @if(session()->get("roles") && count(session()->get("roles")) > 1)
+                  <div class="pull-center col-xs-6 ">
+                    <a href="#" class="cambiar-rol btn btn-default btn-flat ">Cambiar Rol</a>
+                  </div>
+                @endif 
                 <div class="pull-right">
                 <a href="{{route('logout')}}" class="btn btn-default btn-flat">Salir</a>
                 </div>
