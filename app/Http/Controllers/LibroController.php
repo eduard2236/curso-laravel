@@ -28,7 +28,8 @@ class LibroController extends Controller
      */
     public function crear()
     {
-        //
+        can('crear-libros');
+        return view('libro.crear');
     }
 
     /**
@@ -39,7 +40,8 @@ class LibroController extends Controller
      */
     public function guardar(Request $request)
     {
-        //
+        if ($foto = Libro::setCaratula($request->foto_up))
+            $request->request->add(['foto' =>$foto]);
     }
 
     /**
