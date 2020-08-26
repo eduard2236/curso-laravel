@@ -5,9 +5,9 @@
     </div>
 </div>
 <div class="form-group">
-    <label for="isnb" class="col-lg-3 control-label requerido">Isbn</label>
+    <label for="isbn" class="col-lg-3 control-label requerido">Isbn</label>
     <div class="col-lg-8">
-      <input type="text" name="isnb" id="isnb" class="form-control"  value="{{old('isnb', $data->isnb ?? '')}}" required/>
+      <input type="text" name="isbn" id="isbn" class="form-control"  value="{{old('isbn', $data->isbn ?? '')}}" required/>
     </div>
 </div>
 <div class="form-group">
