@@ -1,3 +1,6 @@
+@php
+  use Carbon\carbon;
+@endphp
 <header class="main-header">
     <!-- Logo -->
     <a href="/" class="logo">
@@ -109,8 +112,10 @@
                 <img src="{{asset("Assets/$theme/dist/img/captura.png")}}" class="img-circle" alt="User Image">
 
                 <p>
-                 Eduard Colmenares - Web Developer
-                  <small>Member since Nov. 2020</small>
+                 {{session()->get('nombre_usuario' , 'Invitado')}} - {{session()->get('rol_nombre' , 'No registrado')}}
+                @auth
+                 <small>Registrado desde {{Carbon::parse(auth()->user()->created_at)-> year }}</small>
+                @endauth
                 </p>
               </li>
               <!-- Menu Body -->
@@ -121,17 +126,21 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
+                @guest
                 <div class="pull-left">
                 <a href="{{route('login')}}" class="btn btn-default btn-flat">Login</a>
                 </div>
+                @endguest
                 @if(session()->get("roles") && count(session()->get("roles")) > 1)
-                  <div class="pull-center col-xs-6 ">
+                  <div class="pull-left ">
                     <a href="#" class="cambiar-rol btn btn-default btn-flat ">Cambiar Rol</a>
                   </div>
                 @endif 
+                @if(session()->get("usuario") )
                 <div class="pull-right">
-                <a href="{{route('logout')}}" class="btn btn-default btn-flat">Salir</a>
+                <a href="{{route('logout')}} " class="btn btn-default btn-flat">Salir</a>
                 </div>
+                @endif
               </li>
             </ul>
           </li>

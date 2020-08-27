@@ -60,6 +60,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware'=> ['auth'
     Route::get('permiso-rol','PermisoRolController@index')->name('permiso_rol');
     Route::post('permiso-rol','PermisoRolController@guardar')->name('guardar_permiso_rol');
 });
+    //rutas de libro
     Route::get('libro','LibroController@index')->name('libro');
     Route::get('libro/crear','LibroController@crear')->name('crear_libro');
     Route::post('libro','LibroController@guardar')->name('guardar_libro');
@@ -67,4 +68,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware'=> ['auth'
     Route::get('libro/{id}/editar','LibroController@editar')->name('editar_libro');
     Route::put('libro/{id}','LibroController@actualizar')->name('actualizar_libro'); 
     Route::delete('libro/{id}','LibroController@eliminar')->name('eliminar_libro');
-
+ //rutas de libro-prestamo
+    Route::get('libro-prestamo','LibroPrestamoController@index')->name('prestamo-libro');
+    

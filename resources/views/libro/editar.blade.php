@@ -3,6 +3,16 @@
  Libro
 @endsection
 
+@section("styles")
+<link href="{{asset("Assets/js/bootstrap-fileinput/css/fileinput.min.css")}}" rel="stylesheet" type="text/css"/>
+@endsection
+
+@section("scriptsPlugins")
+<script src="{{asset("Assets/js/bootstrap-fileinput/js/fileinput.min.js")}}" type="text/javascript"></script>
+<script src="{{asset("Assets/js/bootstrap-fileinput/js/locales/es.js")}}" type="text/javascript"></script>
+<script src="{{asset("Assets/js/bootstrap-fileinput/themes/fas/theme.min.js")}}" type="text/javascript"></script>
+@endsection
+
 @section("scripts")
 <script src="{{asset("Assets/pages/scripts/libro/crear.js")}}" type="text/javascript"></script>
 @endsection
@@ -14,14 +24,10 @@
             @include('includes.mensaje')
             <div class="box box-danger">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Editar Libro</h3>
-                    <div class="box-tolls pull-right">
-                        <a href="{{route('libro')}}" class="btn btn-blok btn-info btn-sm">
-                            <i class="fa fa-fw fa-reply-all"></i>Volver al listado
-                        </a>
-                    </div>     
-                </div>
-            <form action="{{route('actualizar_libro',['id' =>$data->id])}}" method="POST" id="form-general" class="form-horizontal" autocomplete="off">
+                <h3 class="box-title">Editar Libro {{$data->titulo}}</h3>
+                        <a href="{{route('libro')}}" class="btn btn-blok btn-info btn-sm pull-right">Volver al listado></a>    
+                    </div>
+            <form action="{{route('actualizar_libro', $data->id )}}" method="POST" id="form-general" class="form-horizontal" autocomplete="off" enctype="multipart/form-data">
                     @csrf @method("PUT")
                     <div class="box-body">
                         @include('libro.form')

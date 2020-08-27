@@ -36,7 +36,7 @@
                         <tr>
                         <td><a href="{{route('ver_libro', $data)}}" class="ver-libro">{{$data->titulo}}</a></td>
                             <td>{{$data->cantidad}}</td>
-                            <td><img src ="{{Storage::url("imagenes/caratulas/$data->foto")}}" alt="Caratula del libro"></td>
+                            <td><img src ="{{Storage::url("imagenes/caratulas/$data->foto")}}" alt="Caratula del libro" style="width:150px"></td>
                             <td>
                                 <a href="{{route('editar_libro',['id' =>$data->id])}}" class=" btn-accion-tabla tooltipsC" title="Editar este registro">
                                     <i class="fa fa-fw fa-pencil"></i>
