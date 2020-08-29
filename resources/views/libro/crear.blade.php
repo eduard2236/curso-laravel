@@ -23,17 +23,19 @@
         <div class="col-lg-12">
             @include('includes.form-error')
             @include('includes.mensaje')
-            <div class="box box-danger">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Crear Libro</h3>
-                  <a href="{{route('libro')}}" class="btn btn-info btn-sm pull-right">listado</a>    
+            <div class="card card-success">
+                <div class="card-header ">
+                  <h3 class="card-title">Crear Libro</h3>
+                    <div class="card-tools">
+                        <a href="{{route('libro')}}" class="btn btn-secondary btn-sm pull-right">listado</a>
+                    </div>        
                 </div>
             <form action="{{route('guardar_libro')}}" method="POST" id="form-general" class="form-horizontal" autocomplete="off" enctype="multipart/form-data">
                     @csrf
-                    <div class="box-body">
+                    <div class="card-body">
                         @include('libro.form')
                     </div>
-                    <div class="box-footer">
+                    <div class="card-footer">
                         <div class="col-lg-3"></div>
                         <div class="col-lg-6">
                             @include('includes.boton-form-crear')

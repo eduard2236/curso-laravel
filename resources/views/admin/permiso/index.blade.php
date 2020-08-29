@@ -11,19 +11,21 @@
     <div class="row">
         <div class="col-lg-12">
             @include('includes.mensaje')
-            <div class="box box-primary">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Permisos</h3>
-                  <a href="{{route('crear_permiso')}}" class=" btn btn-success btn-sm pull-right">Crear permiso</a>
+            <div class="card card-secondary">
+                <div class="card-header ">
+                  <h3 class="card-title">Permisos</h3>
+                    <div class="card-tools card-success">
+                        <a href="{{route('crear_permiso')}}" class=" btn btn-success btn-sm pull-right">Crear permiso</a>
+                    </div>
                 </div>
-                <div class="box-body table-responsive no-padding">
+                <div class="card-body table-responsive p-0">
                     <table class="table table-striped table-bordered table-hover" id="tabla-data">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th class="width20">ID</th>
                                 <th>Nombre</th>
                                 <th>Slug</th>
-                                <th class="width70"></th>
+                                <th class="width70">Accion</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,7 +36,7 @@
                                     <td>{{ $permiso ->slug}}</td>
                                     <td>
                                         <a href="{{route('editar_permiso',['id' =>$permiso->id])}}" class=" btn-accion-tabla tooltipsC" title="Editar este registro">
-                                            <i class="fa fa-fw fa-pencil"></i>
+                                            <i class="fa fa-edit text-info"></i>
                                         </a>
                                         <form action="{{route('eliminar_permiso',['id' =>$permiso->id])}}" class="d-inline form-eliminar" method="POST">
                                             @csrf @method("delete")

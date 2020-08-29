@@ -13,8 +13,23 @@ label.requerido:after{
 .d-inline{
         display: inline;
 }
+.derecha{
+        float: left;
+      }
+.width20{
+        width: 20px !important;
+    }
 .width70{
         width: 70px !important;
+    }
+.width80{
+        width: 80px !important;
+    }
+.width100{
+        width: 100px !important;
+}
+.width90{
+        width: 90px !important;
 }
 .pl-20{
         padding-left:20px !important;

@@ -12,23 +12,23 @@
     <div class="col-lg-12">
         @csrf
         @include('includes.mensaje')
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title">Libros</h3>
-                <div class="box-tolls pull-right">
-                    <a href="{{route('crear_libro')}}" class="btn btn-blok btn-success btn-sm">
+        <div class="card card-secondary">
+            <div class="card-header">
+                <h3 class="card-title"> Libros </h3>
+                <div class="card-tools card-success">
+                    <a href="{{route('crear_libro')}}" class="btn btn-success btn-sm">
                         <i class="fa fa-fw fa-plus-circle"></i>Nuevo Registro
                     </a>
                 </div>  
             </div>
-            <div class="box-body">
+            <div class="card-body table-responsive p-0">
                 <table class="table table-striped table-bordered table-hover" id="tabla-data">
                     <thead>
                         <tr>
                             <th>Titulo</th>
                             <th>Cantidad</th>
                             <th>foto</th>
-                            <th class="width70"></th>
+                            <th class="width80"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -38,12 +38,12 @@
                             <td>{{$data->cantidad}}</td>
                             <td><img src ="{{Storage::url("imagenes/caratulas/$data->foto")}}" alt="Caratula del libro" style="width:150px"></td>
                             <td>
-                                <a href="{{route('editar_libro',['id' =>$data->id])}}" class=" btn-accion-tabla tooltipsC" title="Editar este registro">
-                                    <i class="fa fa-fw fa-pencil"></i>
+                                <a href="{{route('editar_libro',['id' =>$data->id])}}" class=" btn-accion-tabla float-lg-center tooltipsC" title="Editar este registro">
+                                    <i class="fa fa-edit text-info"></i>
                                 </a>
                                 <form action="{{route('eliminar_libro',['id' =>$data->id])}}" class="d-inline form-eliminar" method="POST">
                                     @csrf @method("delete")
-                                    <button type="submit" class="btn-accion-tabla eliminar tooltipsC" title="Eliminar este registro">
+                                    <button type="submit" class="btn-accion-tabla float-lg-center eliminar tooltipsC" title="Eliminar este registro">
                                         <i class="fa fa-fw fa-trash text-danger"></i>
                                     </button>  
                                 </form>      
@@ -60,14 +60,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                <h5 class="modal-title">Libro</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-                <h4 class="modal-title">Libro</h4>
             </div>
             <div class="modal-body"></div>
             <div class="modal-footer">
-                <button type="button" class=" btn btn-default pull-left" data-dismiss="modal">close</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
             </div>
         </div>
     </div>

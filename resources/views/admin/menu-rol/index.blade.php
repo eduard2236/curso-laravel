@@ -11,11 +11,11 @@ Menu-Rol
 <div class="row">
     <div class="col-lg-12">
         @include('includes.mensaje')
-        <div class="box box-success">
-            <div class="box-header with-border">
-                <h3 class="box-title">Menus - Rol</h3>
+        <div class="card card-success">
+            <div class="card-header ">
+                <h3 class="card-title">Menus - Rol</h3>
             </div>
-            <div class="box-body">
+            <div class="card-body table-responsive p-0">
                 @csrf
                 <table class="table table-striped table-bordered table-hover" id="tabla-data">
                     <thead>
@@ -32,7 +32,7 @@ Menu-Rol
                                 @break
                             @endif
                                 <tr>
-                                    <td class="font-weight-bold"><i class="fa fa-arrows-alt"></i>{{$menu["nombre"]}}</td>
+                                    <td class="font-weight-bold"><i class="fa fa-arrows-alt"></i> {{$menu["nombre"]}}</td>
                                     @foreach($rols as $id => $nombre)
                                         <td class="text-center">
                                             <input

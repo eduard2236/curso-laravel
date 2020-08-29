@@ -11,21 +11,21 @@
 <div class="row">
     <div class="col-lg-12">
         @include('includes.mensaje')
-        <div class="box">
-            <div class="box-header with-border">
-                <h3 class="box-title">Roles</h3>
-                <div class="box-tolls pull-right">
-                    <a href="{{route('crear_rol')}}" class="btn btn-blok btn-success btn-sm">
+        <div class="card card-secondary">
+            <div class="card-header">
+                <h3 class="card-title">Roles</h3>
+                <div class="card-tools card-success">
+                    <a href="{{route('crear_rol')}}" class="btn btn-success btn-sm">
                         <i class="fa fa-fw fa-plus-circle"></i>Nuevo Registro
                     </a>
                 </div>  
             </div>
-            <div class="box-body">
+            <div class="card-body table-responsive p-0">
                 <table class="table table-striped table-bordered table-hover" id="tabla-data">
                     <thead>
                         <tr>
                             <th>Nombre</th>
-                            <th class="width70"></th>
+                            <th class="width70">Accion </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,11 +34,11 @@
                             <td>{{$data->nombre}}</td>
                             <td>
                                 <a href="{{route('editar_rol',['id' =>$data->id])}}" class=" btn-accion-tabla tooltipsC" title="Editar este registro">
-                                    <i class="fa fa-fw fa-pencil"></i>
+                                    <i class="fa fa-edit text-info"></i>
                                 </a>
                                 <form action="{{route('eliminar_rol',['id' =>$data->id])}}" class="d-inline form-eliminar" method="POST">
                                     @csrf @method("delete")
-                                    <button type="submit" class="btn-accion-tabla eliminar tooltipsC" title="Eliminar este registro">
+                                    <button type="submit" class="btn-accion-tabla eliminar float-lg-right tooltipsC" title="Eliminar este registro">
                                         <i class="fa fa-fw fa-trash text-danger"></i>
                                     </button>  
                                 </form>      

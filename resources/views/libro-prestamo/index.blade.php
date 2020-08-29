@@ -12,12 +12,12 @@ Libros Prestados
     <div class="col-lg-12">
         @csrf
         @include('includes.mensaje')
-        <div class="card card-info">
+        <div class="card card-secondary">
             <div class="card-header">
                 <h3 class="card-title">Libros prestados</h3>
                 <div class="card-tools">
-                    <a href="{{route('crear_libro')}}" class="btn btn-outline-secondary btn-sm">
-                        <i class="fa fa-fw fa-plus-circle"></i> Prestar nuevo libro
+                    <a href="{{route('crear_libro')}}" class="btn btn-success btn-sm">
+                        <i class="fa fa-fw fa-check-circle"></i>  Prestar nuevo libro
                     </a>
                 </div>
             </div>
@@ -25,13 +25,12 @@ Libros Prestados
                 <table class="table table-striped table-bordered table-hover" id="tabla-data">
                     <thead>
                         <tr>
-                            <th></th>
+                            <th class="width20">Caratula</th>
                             <th>Título</th>
                             <th>Prestado por</th>
                             <th>Prestado a</th>
                             <th>Fecha prestamo</th>
                             <th>Fecha devolución</th>
-                            <th class="width80"></th>
                         </tr>
                     </thead>
                     <tbody>

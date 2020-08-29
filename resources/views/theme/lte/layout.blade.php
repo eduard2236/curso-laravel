@@ -6,26 +6,21 @@
     <title>@yield('titulo', 'biblioteca')</title>
     <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.7 -->
-        <link rel="stylesheet" href="{{asset("Assets/$theme/bower_components/bootstrap/dist/css/bootstrap.min.css")}}">
-    <!-- Font Awesome -->
-        <link rel="stylesheet" href="{{asset("Assets/$theme/bower_components/font-awesome/css/font-awesome.min.css")}}">
-    <!-- Ionicons -->
-        <link rel="stylesheet" href="{{asset("Assets/$theme/bower_components/Ionicons/css/ionicons.min.css")}}">
-    <!-- Theme style -->
-        <link rel="stylesheet" href="{{asset("Assets/$theme/dist/css/AdminLTE.min.css")}}">
-    <!-- Select2 -->
-        <link rel="stylesheet" href="{{asset("Assets/$theme/bower_components/select2/dist/css/select2.min.css")}}">
-    <!-- Theme style -->
-        <link rel="stylesheet" href="{{asset("Assets/$theme/dist/css/AdminLTE.min.css")}}">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-        folder instead of downloading all of them to reduce the load. -->
-        <link rel="stylesheet" href="{{asset("Assets/$theme/dist/css/skins/_all-skins.min.css")}}">
-
+        <link rel="stylesheet" href="{{asset("assets/$theme/plugins/fontawesome-free/css/all.min.css")}}">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{{asset("assets/$theme/dist/css/adminlte.min.css")}}">
+        <!-- Select2 -->
+        <link rel="stylesheet" href="{{asset("assets/$theme/plugins/select2/css/select2.min.css")}}">
+        <link rel="stylesheet" href="{{asset("assets/$theme/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css")}}">
+        <!-- Google Font: Source Sans Pro -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+        <!-- CDN de tollstips -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
         @yield("styles")
-  
+        <!-- CSS personalizado -->
         <link rel="stylesheet" href="{{asset("Assets/css/custom.css")}}">
 
         
@@ -39,25 +34,36 @@
 
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    </head>
-    <body class="hold-transition skin-blue layout-boxed sidebar-mini">
+</head>
+
+<body class="hold-transition sidebar-mini">
     <!-- Site wrapper -->
-        <div class="wrapper">
-            <!--inicio header-->
-            @include("theme/$theme/header")
-            <!--fin header-->
-            <!--inicio aside-->
-            @include("theme/$theme/aside")
-            <!--fin aside-->
-            <div class="content-wrapper">
-                        <!-- Content Header (Page header) -->
-                <section class="content">
-                   @yield('contenido')  
-                 </section>
-            </div>
-            <!--inicio footer-->
-            @include("theme/$theme/footer")
-            <!--fin  footer-->
+    <div class="wrapper">
+        <!-- Inicio Header -->
+        @include("theme/$theme/header")
+        <!-- Fin Header -->
+        <!-- Inicio Aside -->
+        @include("theme/$theme/aside")
+        <!-- Fin Aside -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+
+            </section>
+            <section class="content">
+                <div class="container-fluid">
+                    @yield('contenido')
+                </div>
+            </section>
+        </div>
+        <!--Inicio Footer -->
+        @include("theme/$theme/footer")
+        <!-- Fin Footer -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+          <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
              <!--Inico de ventana modal para login con mas de un rol -->
              @if(session()->get("roles") && count(session()->get("roles")) > 1)
                 @csrf
@@ -82,21 +88,17 @@
                 </div>
             @endif
         </div>
-        <!-- jQuery 3 -->
-        <script src="{{asset("Assets/$theme/bower_components/jquery/dist/jquery.min.js")}}"></script>
-        <!-- Bootstrap 3.3.7 -->
-        <script src="{{asset("Assets/$theme/bower_components/bootstrap/dist/js/bootstrap.min.js")}}"></script>
-        <!-- SlimScroll -->
-        <script src="{{asset("Assets/$theme/bower_components/jquery-slimscroll/jquery.slimscroll.min.js")}}"></script>
-        <!-- Select2 -->
-        <script src="{{asset("Assets/$theme/bower_components/select2/dist/js/select2.full.min.js")}}"></script>
-        <!-- FastClick -->
-        <script src="{{asset("Assets/$theme/bower_components/fastclick/lib/fastclick.js")}}"></script>
-        <!-- AdminLTE App -->
-        <script src="{{asset("Assets/$theme/dist/js/adminlte.min.js")}}"></script>
+        <script src="{{asset("assets/$theme/plugins/jquery/jquery.min.js")}}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{{asset("assets/$theme/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
+    <!-- AdminLTE App -->
+    <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
+    <!-- Select 2 -->
+    <script src="{{asset("Assets/$theme/plugins/select2/js/select2.full.min.js")}}"></script>
        
         <!-- AdminLTE for demo purposes -->
         @yield("scriptsPlugins")
+        <script src = " https://unpkg.com/ionicons@5.0.0/dist/ionicons.js " > </script>
         <script src="{{asset("Assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
         <script src="{{asset("Assets/js/localization/messages_es.min.js")}}"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script> 
@@ -104,11 +106,16 @@
         <script src="{{asset("Assets/js/scripts.js")}}"></script>
         <script src="{{asset("Assets/js/funciones.js")}}"></script>
         <script>
-            $(function () {
-              //Initialize Select2 Elements
-              $('.select2').select2()
+           $(function () {
+            //Initialize Select2 Elements
+             $('.select2').select2()
+
+            //Initialize Select2 Elements
+             $('.select2bs4').select2({
+            theme: 'bootstrap4'
+             })
             })
-          </script>
+        </script>
         
 
         @yield("scripts")
