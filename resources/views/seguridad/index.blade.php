@@ -28,14 +28,16 @@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
+           
                 <p class="login-box-msg">Inicio de Sessión</p>
                 @if (session('status'))
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-success alert-dismissible" data-auto-dismiss="5000">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     {{ session('status') }}
                 </div>
                 @endif
                 @if ($errors->any())
-                <div class="alert alert-danger alert-dismissible">
+                <div class="alert alert-danger alert-dismissible" data-auto-dismiss="5000">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
                     <div class="alert-text">
                         @foreach ($errors->all() as $error)
@@ -76,7 +78,7 @@
                 <p class="mb-1">
                     @if (Route::has('password.request'))
                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                        {{ __('Forgot Your Password?') }}
+                        {{ __('Olvidaste tu Contraseña?') }}
                     </a>
                     @endif
                 </p>
@@ -90,6 +92,8 @@
     <script src="{{asset("assets/$theme/plugins/bootstrap/js/bootstrap.bundle.min.js")}}"></script>
     <!-- AdminLTE App -->
     <script src="{{asset("assets/$theme/dist/js/adminlte.min.js")}}"></script>
+    <!-- cerrar alertas automaticamente-->
+    <script src="{{asset("Assets/js/scripts.js")}}"></script>
 </body>
 
 </html>

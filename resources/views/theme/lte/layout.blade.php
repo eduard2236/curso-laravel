@@ -98,7 +98,7 @@
        
         <!-- AdminLTE for demo purposes -->
         @yield("scriptsPlugins")
-        <script src = " https://unpkg.com/ionicons@5.0.0/dist/ionicons.js " > </script>
+        <script src=" https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
         <script src="{{asset("Assets/js/jquery-validation/jquery.validate.min.js")}}"></script>
         <script src="{{asset("Assets/js/localization/messages_es.min.js")}}"></script>
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script> 
