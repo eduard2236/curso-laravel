@@ -16,7 +16,7 @@ Libros Prestados
             <div class="card-header">
                 <h3 class="card-title">Libros prestados</h3>
                 <div class="card-tools">
-                    <a href="{{route('crear_libro')}}" class="btn btn-success btn-sm">
+                    <a href="{{route('libro-prestamo.crear')}}" class="btn btn-success btn-sm">
                         <i class="fa fa-fw fa-check-circle"></i>  Prestar nuevo libro
                     </a>
                 </div>
@@ -42,7 +42,13 @@ Libros Prestados
                             <td>{{$data->prestado_a}}</td>
                             <td>{{$data->fecha_prestamo}}</td>
                             <td class="fecha-devolucion">{{$data->fecha_devolucion ?? 'Prestado'}}</td>
-                            
+                            <td>
+                                @if(!$data->fecha_devolucion)
+                                    <a href="{{route('libro-prestamo.devolver', $data->libro->id)}}" class="libro-devolucion btn-accion-tabla tooltipsC" title="Devolver este libro">
+                                        <i class="fa fa-fw fa-reply-all"></i>
+                                    </a>
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

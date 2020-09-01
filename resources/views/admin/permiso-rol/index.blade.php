@@ -15,7 +15,7 @@ Permiso-Rol
             <div class="card-header with-border">
                 <h3 class="card-title">Permiso - Rol</h3>
             </div>
-            <div class="card-body">
+            <div class="card-body table-responsive p-0">
                 @csrf
                 <table class="table table-striped table-bordered table-hover" id="tabla-data">
                     <thead>

@@ -26,7 +26,7 @@ use Carbon\Carbon;
         <!-- Notifications Dropdown Menu -->
         <li class="nav-item dropdown">
             <a class="nav-link" data-toggle="dropdown" href="#">
-                <i class="far fa-user"></i> {{session()->get('nombre_usuario', 'Invitado')}} - {{session()->get('rol_nombre', 'No registrado')}}
+                <i class="far fa-user"></i> {{session()->get('nombre_usuario', 'Invitado')}} - {{session()->get('rol_nombre', ' No registrado ')}}
             </a>
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 @guest

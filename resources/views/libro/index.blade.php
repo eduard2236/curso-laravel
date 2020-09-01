@@ -28,7 +28,7 @@
                             <th>Titulo</th>
                             <th>Cantidad</th>
                             <th>foto</th>
-                            <th class="width80"></th>
+                            <th class="width80">Accion</th>
                         </tr>
                     </thead>
                     <tbody>

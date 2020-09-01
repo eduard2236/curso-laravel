@@ -72,6 +72,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin','middleware'=> ['auth'
     Route::get('libro/{id}/editar','LibroController@editar')->name('editar_libro');
     Route::put('libro/{id}','LibroController@actualizar')->name('actualizar_libro'); 
     Route::delete('libro/{id}','LibroController@eliminar')->name('eliminar_libro');
- //rutas de libro-prestamo
-    Route::get('libro-prestamo','LibroPrestamoController@index')->name('prestamo-libro');
-    
+    //rutas de libro-prestamo
+    Route::get('libro-prestamo', 'LibroPrestamoController@index')->name('libro-prestamo');
+    Route::get('libro-prestamo/crear', 'LibroPrestamoController@crear')->name('libro-prestamo.crear');
+    Route::post('libro-prestamo', 'LibroPrestamoController@guardar')->name('libro-prestamo.guardar');
+    Route::put('libro-prestamo/{libro}', 'LibroPrestamoController@devolucion')->name('libro-prestamo.devolver');

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ValidacionLibro;
+use App\Models\Libro;
 use Illuminate\Http\Request;
 
 class InicioController extends Controller
@@ -11,8 +13,9 @@ class InicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        return view('inicio');
-    }
+    
+        public function index(Libro $libro)
+        {
+            return view('inicio', compact('libro'));
+        }
 }

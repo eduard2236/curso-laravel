@@ -40,6 +40,9 @@ label.requerido:after{
 .pl-40{
         padding-left:40px !important;
 }
+.style-1{
+        width: 50px !important;
+}
 .auto-35{
         background: url("../lte/dist/img/photo2.png");
         -webkit-background-size: cover;
@@ -47,3 +50,9 @@ label.requerido:after{
         -o-background-size: cover;
         background-size: cover;
         }
+        .button_span {
+                /*overwriting*/
+                color: black;
+                
+            }
+            

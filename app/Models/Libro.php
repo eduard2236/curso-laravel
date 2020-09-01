@@ -12,6 +12,11 @@ class Libro extends Model
     protected $table = "libro";
     protected $fillable = ['titulo','isbn','autor','cantidad','editorial','foto'];
 
+    public function prestamo()
+    {
+        return $this->HasMany(LibroPrestamo::class);
+    }
+
     public static function setCaratula($foto, $actual = false){
         if ($foto){
             if ($actual) {
