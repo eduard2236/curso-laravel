@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <!--Carousel Wrapper-->
-                <a class="d-flex justify-content-center">Ultimos Ejemplares Agregados</a>
+                <h1 style="text-align: center;"> Ultimos Ejemplares Agregados</h1>
 <div id="carousel-example-2" class="carousel slide carousel-fade z-depth-1-half" data-ride="carousel">
     <!--Indicators-->
     <ol class="carousel-indicators">
