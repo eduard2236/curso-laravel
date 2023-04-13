@@ -1,7 +1,8 @@
-label.requerido:after{
+label.requerido:after {
         content: " * ";
         color: #e73d4a;
 }
+
 .btn-accion-tabla {
         cursor: pointer;
         border: none;
@@ -10,49 +11,67 @@ label.requerido:after{
         font-size: 14px !important;
         line-height: 1.5;
 }
-.d-inline{
+
+.d-inline {
         display: inline;
 }
-.derecha{
+
+.derecha {
         float: left;
-      }
-.width20{
+}
+
+.width20 {
         width: 20px !important;
-    }
-.width70{
+}
+
+.width70 {
         width: 70px !important;
-    }
-.width80{
+}
+
+.width80 {
         width: 80px !important;
-    }
-.width100{
+}
+
+.width100 {
         width: 100px !important;
 }
-.width90{
+
+.width90 {
         width: 90px !important;
 }
-.pl-20{
-        padding-left:20px !important;
+
+.pl-20 {
+        padding-left: 20px !important;
 }
-.pl-30{
-        padding-left:30px !important;
+
+.pl-30 {
+        padding-left: 30px !important;
 }
-.pl-40{
-        padding-left:40px !important;
+
+.pl-40 {
+        padding-left: 40px !important;
 }
-.style-1{
+
+.style-1 {
         width: 50px !important;
 }
-.auto-35{
+
+.auto-35 {
         background: url("../lte/dist/img/photo2.png");
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
         background-size: cover;
+}
+
+.button_span {
+        /*overwriting*/
+        color: black;
+
+}
+
+@media screen and (max-width: 600px) {
+        .name-display{
+                display: none;
         }
-        .button_span {
-                /*overwriting*/
-                color: black;
-                
-            }
-            
+}
